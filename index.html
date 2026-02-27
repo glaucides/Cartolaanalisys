@@ -383,6 +383,13 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .reserve-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
       }
 
       .reserve-item img {
@@ -775,6 +782,25 @@
           transform: translateY(0);
         }
       }
+
+      .error-message {
+        background: rgba(220, 53, 69, 0.2);
+        border: 1px solid #dc3545;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .warning-message {
+        background: rgba(255, 193, 7, 0.2);
+        border: 1px solid #ffc107;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px 0;
+        text-align: center;
+        color: #ffc107;
+      }
     </style>
   </head>
   <body>
@@ -788,7 +814,7 @@
       <div class="control-panel">
         <div class="input-group">
           <label for="budget">💰 Seu Patrimônio (C$)</label>
-          <input type="number" id="budget" placeholder="Ex: 100.0" value="100.0" step="0.1" />
+          <input type="number" id="budget" placeholder="Ex: 100.0" value="120.0" step="0.1" min="80" max="300" />
         </div>
 
         <div class="input-group">
@@ -821,28 +847,13 @@
           <div class="step" id="step1">📊 Buscando Estatísticas</div>
           <div class="step" id="step2">⚔️ Analisando Confrontos</div>
           <div class="step" id="step3">🧠 Calculando Probabilidades</div>
-          <div class="step active" id="step4">✅ Montando Time Ideal</div>
+          <div class="step" id="step4">✅ Montando Time Ideal</div>
         </div>
       </div>
 
-      <div id="mainContent" class="main-content" style="display: flex">
+      <div id="mainContent" class="main-content">
         <div class="field-section">
           <div class="field-container">
             <div class="field-lines">
-              <div class="center-line"></div>
-              <div class="center-circle"></div>
-              <div class="penalty-area-top"></div>
-              <div class="penalty-area-bottom"></div>
-            </div>
-
-            <div class="team-formation" id="teamFormation">
-              <!-- Os jogadores serão inseridos aqui pelo JavaScript -->
-            </div>
-          </div>
-
-          <div class="reserves-section">
-            <div class="reserves-title">
-              <span>🔄 Jogadores Reservas</span>
-              <span style="font-size: 0.8em; color: #3498db">(Não podem ser mais caros que os titulares)</span>
-            </div>
+              <div class       
     
